@@ -8,7 +8,7 @@
         type="text"
         id="add_kegiatan"
         class="form-control"
-        v-model="kegiatan-baru"
+        v-model="kegiatan_baru"
         placeholder="Tambahkan kegiatan"
       />
       <label class="form-label" for="add_kegiatan"></label>
@@ -49,20 +49,20 @@
                     <div class="modal-body"> 
                       <input 
                         type="text" 
-                        id="update_task_title" 
+                        id="update_kegiatan" 
                         class="form-control" 
-                        v-model="update_task_title" 
+                        v-model="update_kegiatan" 
                         :placeholder=modalData.current_task_title
                       /> 
-                      <label class="form-label" for="update_task_title"></label> 
+                      <label class="form-label" for="update_kegiatan"></label> 
                       <input 
                         type="text" 
-                        id="update_task_description" 
+                        id="update_deskripsi_kegiatan" 
                         class="form-control" 
-                        v-model="update_task_description" 
+                        v-model="update_deskripsi_kegiatan" 
                         :placeholder=modalData.current_task_description
                       /> 
-                      <label class="form-label" for="update_task_description"></label> 
+                      <label class="form-label" for="update_deskripsi_kegiatan"></label> 
                     </div> 
                     <div class="modal-footer"> 
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> 
@@ -88,9 +88,9 @@ export default {
     return { 
       userProfile: {}, 
       tasks: [], 
-      new_task_title: "", 
-      update_task_title: "",
-      update_task_description: "",
+      kegiatan_baru: "", 
+      update_kegiatan: "",
+      update_deskripsi_kegiatan: "",
       modalData: {},
     }; 
   }, 
@@ -113,11 +113,11 @@ export default {
     async addTask(e) { 
       e.preventDefault(); 
       const new_task = { 
-        title: this.new_task_title, 
+        title: this.kegiatan_baru, 
         description: "", 
       }; 
       await this.createTask(new_task); 
-      this.new_task_title = ""; 
+      this.kegiatan_baru = ""; 
       this.tasks = this._tasks; 
     }, 
 
@@ -135,20 +135,20 @@ export default {
         current_task_title: task_title,
         current_task_description: task_description
       };
-      this.update_task_title = task_title;
-      this.update_task_description = task_description;
+      this.update_kegiatan = task_title;
+      this.update_deskripsi_kegiatab = task_description;
     },
 
     async updateTask(e, taskId, task_view_idx) { 
       e.preventDefault();
       console.log("task ID : ",taskId);
       console.log(task_view_idx);
-      const updateResult = await this.changeTask([taskId, task_view_idx, this.update_task_title, this.update_task_description]); 
+      const updateResult = await this.changeTask([taskId, task_view_idx, this.update_kegiatan, this.update_deskripsi_kegiatan]); 
       console.log(updateResult);
       this.tasks = this._tasks;
       this.updateData = {};
-      this.update_task_title = "";
-      this.update_task_description = "";
+      this.update_kegiatan = "";
+      this.update_deskripsi_kegiatan = "";
     } 
   }, 
 
