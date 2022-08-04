@@ -1,7 +1,8 @@
-# CRUDwithAuthentication_Application_NestJS_VueJS
+# CRUD Aplikasi untuk mencatat kinerja pegawai dengan NestJs and VueJs
 
 
-### I. This repository is for building a simple web application which involves basic CRUD options of task management. Moreover, the app allows users to register and login their dashboard based on jwt cookie authentication:
+### I. Aplikasi ini mengizinkan user untuk register dan login ke dashboard kegiatan ased on jwt cookie authentication. 
+Teknologi yang digunakan:
 * Backend: NestJS
 * Frontend: VueJS (main branch)
 * Database: PostgreSQL
