@@ -8,7 +8,7 @@
         type="text"
         id="add_kegiatan"
         class="form-control"
-        v-model="kegiatan baru"
+        v-model="kegiatan-baru"
         placeholder="Tambahkan kegiatan"
       />
       <label class="form-label" for="add_kegiatan"></label>
