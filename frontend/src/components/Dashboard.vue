@@ -6,12 +6,12 @@
     <form>
       <input
         type="text"
-        id="add_task"
+        id="add_kegiatan"
         class="form-control"
-        v-model="new_task_title"
-        placeholder="Add task title"
+        v-model="kegiatan baru"
+        placeholder="Tambahkan kegiatan"
       />
-      <label class="form-label" for="add_task"></label>
+      <label class="form-label" for="add_kegiatan"></label>
       <button type="submit" class="btn btn-secondary" @click="addTask">
         Add
       </button>
